@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This is the masterControlScript
+
 public class masterControl : MonoBehaviour
 {
     bool touchControl;
