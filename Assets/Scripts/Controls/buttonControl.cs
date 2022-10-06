@@ -24,8 +24,6 @@ public class buttonControl : MonoBehaviour
     bool isCarGrounded;
     public static bool turning;
     bool turnLeft, turnRight;
-    public delegate void TrailActive();
-    public static event TrailActive trailSet;
 
     void OnEnable()
     {
@@ -41,18 +39,22 @@ public class buttonControl : MonoBehaviour
 
     public void turningLeft()
     {
+        Debug.Log("Left clicked");
         turnLeft = true;
     }
     public void noTurningLeft()
     {
+        Debug.Log("Left released");
         turnLeft = false;
     }
     public void noTurningRight()
     {
+        Debug.Log("Right released");
         turnRight = false;
     }
     public void turningRight()
     {
+        Debug.Log("Right clicked");
         turnRight = true;
     }
 

@@ -1,28 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // This is the masterControlScript
 
 public class masterControl : MonoBehaviour
 {
-    bool touchControl;
     [Header("UI")]
-    [SerializeField] GameObject buttonUI;
+    [SerializeField] Image touch;
+    [SerializeField] Image button;
 
     [Header("Script")]
     [SerializeField] buttonControl buttonLogic;
     [SerializeField] wheelController wheelLogic;
     [SerializeField] touchControl touchLogic;
     [SerializeField] trailControl trailLogic;
+
+    public static bool touchActive;
     void Start()
     {
-        setTouchControl();
+        if (PlayerPrefs.GetInt("Touch") == 1)
+            setTouchControl();
+        else
+            setButtonControl();
     }
 
     public void setTouchControl()
     {
-        touchControl = true;
+        touchActive = true;
+        touch.color = Color.green;
+        button.color = Color.white;
+        PlayerPrefs.SetInt("Touch", 1);
         touchLogic.enabled = true;
         wheelLogic.enabled = true;
         buttonLogic.enabled = false;
@@ -31,7 +40,10 @@ public class masterControl : MonoBehaviour
 
     public void setButtonControl()
     {
-        touchControl = false;
+        touchActive = false;
+        touch.color = Color.white;
+        button.color = Color.green;
+        PlayerPrefs.SetInt("Touch", 0);
         touchLogic.enabled = false;
         wheelLogic.enabled = false;
         buttonLogic.enabled = true;

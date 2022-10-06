@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
+    [SerializeField] GameObject ControlsPanel;
     [SerializeField] GameObject PausePanel;
     [SerializeField] GameObject ConfirmPanel;
     [SerializeField] GameObject SettingsPanel;
     [SerializeField] GameObject PauseButton;
     [SerializeField] GameObject CrossButton;
+    void Start()
+    {
+        if (masterControl.touchActive == false)
+            ControlsPanel.SetActive(true);
+    }
     public void PauseClicked()
     {
         //Pause time
@@ -21,22 +27,28 @@ public class PauseScript : MonoBehaviour
         //Deactivate Pause Button
         PauseButton.SetActive(false);
         CrossButton.SetActive(true);
+        //Deactivate Controls Panel
+        if (ControlsPanel.activeInHierarchy)
+            ControlsPanel.SetActive(false);
     }
 
     public void ResumeClicked()
     {
         //Resume time
         Time.timeScale = 1;
-        
+
         //Deactivate Pause Panel
         PausePanel.SetActive(false);
         //Activate Pause Button
         PauseButton.SetActive(true);
         CrossButton.SetActive(false);
-        if(ConfirmPanel.activeInHierarchy)
+        if (ConfirmPanel.activeInHierarchy)
             ConfirmPanel.SetActive(false);
-        if(SettingsPanel.activeInHierarchy)
+        if (SettingsPanel.activeInHierarchy)
             SettingsPanel.SetActive(false);
+        //Activate Controls Panel
+        if (!ControlsPanel.activeInHierarchy && masterControl.touchActive == false)
+            ControlsPanel.SetActive(true);
     }
 
     public void ExitClicked()
