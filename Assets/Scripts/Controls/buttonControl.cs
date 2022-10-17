@@ -7,7 +7,7 @@ using Cinemachine;
 public class buttonControl : MonoBehaviour
 {
     [Header("Camera")]
-    [SerializeField] CinemachineVirtualCamera cam;
+    [SerializeField] public CinemachineVirtualCamera cam;
 
     [Header("References")]
     public Rigidbody motorRB;
