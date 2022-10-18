@@ -1138,6 +1138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254b727af39153a418939bab93334b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  motorRB: {fileID: 9042844862536810535}
+  carColliderRB: {fileID: 9042844861281008883}
 --- !u!1 &9042844862319055638
 GameObject:
   m_ObjectHideFlags: 0
