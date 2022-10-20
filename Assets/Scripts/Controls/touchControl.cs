@@ -6,7 +6,7 @@ using Cinemachine;
 public class touchControl : MonoBehaviour
 {
     [Header("Camera")]
-    [SerializeField] CinemachineVirtualCamera cam;
+    [SerializeField] public CinemachineVirtualCamera cam;
     public LayerMask groundLayer;
     public Rigidbody motorRB;
     public Rigidbody carRB;

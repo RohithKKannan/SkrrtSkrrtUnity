@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class masterControl : MonoBehaviour
 {
+    GameObject Player;
+
     [Header("UI")]
     [SerializeField] Image touch;
     [SerializeField] Image button;
