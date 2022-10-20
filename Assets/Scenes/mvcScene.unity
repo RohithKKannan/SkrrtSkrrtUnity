@@ -15180,7 +15180,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb300a01f1957644a30bab7dedf17ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cars:
+  - carType: 0
+    movementSpeed: 30
+    rotationSpeed: 60
+    color: {fileID: 2100000, guid: 07f44fe3e9c462146a7769b976c50ec4, type: 2}
+  - carType: 1
+    movementSpeed: 10
+    rotationSpeed: 40
+    color: {fileID: 2100000, guid: d2344366b80fe3d4f886ec412e0174fa, type: 2}
+  - carType: 2
+    movementSpeed: 50
+    rotationSpeed: 90
+    color: {fileID: 2100000, guid: c4c2ee3e832cffd48bb9d156c2b21376, type: 2}
   player: {fileID: 4833411361741288337, guid: 1b22adc4c528bd14f9c733a8cca2193f, type: 3}
+  carIndex: 1
 --- !u!1001 &380949783
 PrefabInstance:
   m_ObjectHideFlags: 0

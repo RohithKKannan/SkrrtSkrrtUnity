@@ -1,5 +1,4 @@
 using UnityEngine;
-using Cinemachine;
 
 public class CarController
 {
@@ -15,6 +14,8 @@ public class CarController
 
         carModel.SetCarController(this);
         carView.SetCarController(this);
+
+        carView.ChangeColor(carModel.color);
     }
     public void Move(float movement, float movementSpeed)
     {
@@ -26,5 +27,12 @@ public class CarController
         Quaternion deltaRotation = Quaternion.Euler(vector * Time.deltaTime);
         rb.MoveRotation(rb.rotation * deltaRotation);
     }
-
+    public float GetMovementSpeed()
+    {
+        return carModel.movementSpeed;
+    }
+    public float GetRotationSpeed()
+    {
+        return carModel.rotationSpeed;
+    }
 }

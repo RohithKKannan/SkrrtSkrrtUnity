@@ -344,7 +344,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254b727af39153a418939bab93334b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rb: {fileID: 6329770157800990892}
+  color:
+  - {fileID: 9020143351612470413}
+  - {fileID: 27946673100744957}
 --- !u!54 &6329770157800990892
 Rigidbody:
   m_ObjectHideFlags: 0
